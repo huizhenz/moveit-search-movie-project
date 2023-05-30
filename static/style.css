@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.movie-card {
+  /* background-color: yellow; */
+
+  width: 300px;
+}
