@@ -5,20 +5,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Search Page</title>
+    <title>영화 검색 페이지</title>
 
     <link rel="stylesheet" href="../static/style.css" />
     <script defer src="../static/main.js"></script>
   </head>
 
   <body>
-    <h1>Movie Search</h1>
-    <div class="search">
-      <p>찾으시려는 영화를 검색하세요</p>
-      <input type="'text" />
-      <button onclick="search">검색</button>
+    <!----- title ----->
+    <div class="background">
+      <h1>영화 검색</h1>
+      <!----- search movie ----->
+      <div id="search-container">
+        <!-- <p>찾으시려는 영화를 검색하세요</p> -->
+        <input
+          type="search"
+          class="input"
+          placeholder="   입력해 주세요 ... "
+        />
+        <!-- <input type="submit" value="Log in" /> -->
+        <button class="btn">검색</button>
+      </div>
     </div>
-    <hr />
-    <p id="movie"></p>
+    <!----- movie card ----->
+    <div id="movie"></div>
   </body>
 </html>
