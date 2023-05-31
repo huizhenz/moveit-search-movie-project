@@ -43,7 +43,7 @@ fetch(
     });
 
     // ======================= 검색 기능 ===========================
-    // filter 사용해서 input값이 들어있는 영화들 추출하는 filterMovies 함수 선언
+    // 2-2. filter 사용해서 input값이 들어있는 영화들 추출하는 filterMovies 함수 선언
     function filterMovies(movieTitle) {
       filterArr = movies.filter(
         (item) => item.title.toLowerCase().includes(movieTitle) // movies의 title과 movieTitle 비교 후 filterArr 저장
@@ -52,7 +52,7 @@ fetch(
       // 새로고침
       document.getElementById("movie").innerHTML = "";
 
-      // filterArr에 대한 forEach
+      // 2-3. filterArr에 대한 forEach로 검색된 영화만 화면에 다시 띄우기
       filterArr.forEach((data) => {
         let title = data.title;
         let overview = data.overview;
@@ -86,17 +86,25 @@ fetch(
       let movieTitle = searchInput.value.toLowerCase().trim();
 
       if (movieTitle === "") {
-        alert("Please write movie title");
+        alert("영화 제목을 입력해주세요.");
       } else if (movieTitle.length > 50) {
-        alert("your movie title is too long");
+        alert("영화 제목이 너무 길어요.");
       } else {
-        // filter 사용해서 input값이 들어있는 영화들 추출하는 filterMovies 함수 호출
+        // 2-1. filter 사용해서 input값이 들어있는 영화들 추출하는 filterMovies 함수 호출
         filterMovies(movieTitle);
       }
     }
 
-    // 3. button 클릭 시 이벤트 btnClick 함수 호출
+    // 3. button 클릭 시 btnClick 함수 호출
     searchButton.addEventListener("click", btnClickDisplay);
+
+    // 3-1. 키보드 enter키 입력 시 btnClick 함수 호출
+
+    searchInput.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        searchButton.click();
+      }
+    });
   })
   // ======================= 검색 기능 ===========================
 
