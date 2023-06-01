@@ -6,28 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영화 검색 페이지</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./pngegg (7).png" />
+    <!---- 파비콘 ---->
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.png" />
 
     <link rel="stylesheet" href="../static/style.css" />
     <script defer src="../static/main.js"></script>
   </head>
 
   <body>
+    <!----- 상단 바 ----->
     <div class="menu-bar">
       <a href="#"
-        ><img class="logo" src="../static/img/logo.png" alt="logo"
+        ><img
+          class="logo"
+          src="../static/img/logo.png"
+          alt="logo"
+          onClick="window.location.reload()"
       /></a>
       <a href="#"
-        ><img class="menu-search" src="../static/img/search2.png" alt="search"
+        ><img class="menu-search" src="../static/img/search.png" alt="search"
       /></a>
     </div>
-    <!----- title ----->
+    <!----- 백그라운드 ----->
     <div class="background">
-      <!----- search movie ----->
+      <div class="title">
+        <p>찾으시려는 영화를 검색해 보세요!</p>
+      </div>
+      <!----- 검색 창과 버튼 ----->
       <div id="search-container">
-        <div class="title">
-          <p>찾으시려는 영화를 검색해 보세요!</p>
-        </div>
         <input
           type="search"
           class="input"
@@ -35,12 +41,14 @@
           autofocus
         />
         <button class="btn">검색</button>
+        <button class="close-btn">닫기</button>
       </div>
     </div>
-    <!----- movie card ----->
+    <!----- 영화 카드 ----->
     <div id="movie"></div>
+    <!----- 상단 이동 스크롤 버튼 ----->
     <a class="scroll-to-top"
-      ><img src="../static/img/arrow3.png" alt="arrow up"
+      ><img src="../static/img/arrow.png" alt="arrow up"
     /></a>
   </body>
 </html>

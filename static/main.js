@@ -32,10 +32,10 @@ fetch(
       temp_html = `<div class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
                       <img class="movie-img" src =${img_url} art=${title}"&nbsp이미지" />
                       <div class="movie-info">
-                        <h3>${title}</h3>
-                        <p class="grade">${vote_average}</p>
+                        <span class="movie-title">${title}</span>
+                        <span class="grade">${vote_average}</span>
                         <p>${overview}</p>
-                        </div>
+                      </div>
                     </div>`;
 
       // id가 "moive"인 요소들 안의 HTML을 temp_html로 변경하기
@@ -64,11 +64,11 @@ fetch(
 
         let temp_html = ``;
         temp_html = `<div class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
-                        <p><img src = ${img_url} /></p>
+                        <img class="movie-img" src =${img_url} art=${title}"&nbsp이미지" />
                         <div class="movie-info">
-                        <h3>${title}</h3>
-                        <p>${overview}</p>
-                        <p>${vote_average}</p>
+                          <span class="movie-title">${title}</span>
+                          <span class="grade">${vote_average}</span>
+                          <p>${overview}</p>
                         </div>
                       </div>`;
 
@@ -110,12 +110,14 @@ fetch(
 
   .catch((err) => console.error(err));
 
-// 클릭 시 페이지의 상단으로 스크롤
+// ==================== 상단 이동 스크롤 기능 ========================
 const topBtn = document.querySelector(".scroll-to-top");
 
+// window를 scroll 하면 checkHeight 함수 호출
 window.addEventListener("scroll", checkHeight);
 
-// window의 높이 확인
+// window의 높이를 확인하는 checkHeight 함수 선언
+// window가 400px 이상 스크롤 되었을 때 버튼 보이게 하기
 function checkHeight() {
   if (window.scrollY < 400) {
     topBtn.style.display = "none";
@@ -124,9 +126,28 @@ function checkHeight() {
   }
 }
 
+// 상단 이동 스크롤 버튼 클릭시 상단으로 (부드럽게) 이동하게 해주는 이벤트
 topBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
 });
+
+// 상단 바에 있는 돋보기 버튼 클릭 시 검색창 보이게 하는 기능
+// 검색창 옆에 닫기 버튼 클릭 시 검색창 사라지게 하는 기능
+const menuSearchBtn = document.querySelector(".menu-search");
+const searchCloseBtn = document.querySelector(".close-btn");
+const searchContainer = document.querySelector("#search-container");
+
+menuSearchBtn.addEventListener("click", displaySearchContainer);
+
+function displaySearchContainer() {
+  searchContainer.style.display = "block";
+}
+
+searchCloseBtn.addEventListener("click", noneDisplaySearchContainer);
+
+function noneDisplaySearchContainer() {
+  searchContainer.style.display = "none";
+}
