@@ -6,29 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영화 검색 페이지</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./pngegg (7).png" />
 
     <link rel="stylesheet" href="../static/style.css" />
     <script defer src="../static/main.js"></script>
   </head>
 
   <body>
+    <div class="menu-bar">
+      <a href="#"
+        ><img class="logo" src="../static/img/logo.png" alt="logo"
+      /></a>
+      <a href="#"
+        ><img class="menu-search" src="../static/img/search2.png" alt="search"
+      /></a>
+    </div>
     <!----- title ----->
     <div class="background">
-      <h1>영화 검색</h1>
       <!----- search movie ----->
       <div id="search-container">
-        <!-- <p>찾으시려는 영화를 검색하세요</p> -->
+        <div class="title">
+          <p>찾으시려는 영화를 검색해 보세요!</p>
+        </div>
         <input
           type="search"
           class="input"
-          placeholder="   입력해 주세요 ... "
+          placeholder="입력해 주세요 ... "
           autofocus
         />
-        <!-- <input type="submit" value="Log in" /> -->
         <button class="btn">검색</button>
       </div>
     </div>
     <!----- movie card ----->
     <div id="movie"></div>
+    <a class="scroll-to-top"
+      ><img src="../static/img/arrow3.png" alt="arrow up"
+    /></a>
   </body>
 </html>

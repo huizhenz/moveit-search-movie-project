@@ -30,13 +30,13 @@ fetch(
 
       let temp_html = ``;
       temp_html = `<div class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
-                  <div class="movie-img">   
-                    <p><img src = ${img_url} /></p>
-                  </div>
-                    <p>${title}</p>
-                    <p>${overview}</p>
-                    <p>${vote_average}</p>
-                </div>`;
+                      <img class="movie-img" src =${img_url} art=${title}"&nbsp이미지" />
+                      <div class="movie-info">
+                        <h3>${title}</h3>
+                        <p class="grade">${vote_average}</p>
+                        <p>${overview}</p>
+                        </div>
+                    </div>`;
 
       // id가 "moive"인 요소들 안의 HTML을 temp_html로 변경하기
       document.getElementById("movie").innerHTML += temp_html;
@@ -64,13 +64,13 @@ fetch(
 
         let temp_html = ``;
         temp_html = `<div class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
-                    <div class="movie-img">   
-                      <p><img src = ${img_url} /></p>
-                    </div>
-                      <p>${title}</p>
-                      <p>${overview}</p>
-                      <p>${vote_average}</p>
-                  </div>`;
+                        <p><img src = ${img_url} /></p>
+                        <div class="movie-info">
+                        <h3>${title}</h3>
+                        <p>${overview}</p>
+                        <p>${vote_average}</p>
+                        </div>
+                      </div>`;
 
         document.getElementById("movie").innerHTML += temp_html;
       });
@@ -86,7 +86,7 @@ fetch(
       let movieTitle = searchInput.value.toLowerCase().trim();
 
       if (movieTitle === "") {
-        alert("영화 제목을 입력해주세요.");
+        alert("영화 제목을 입력해 주세요.");
       } else if (movieTitle.length > 50) {
         alert("영화 제목이 너무 길어요.");
       } else {
@@ -109,3 +109,24 @@ fetch(
   // ======================= 검색 기능 ===========================
 
   .catch((err) => console.error(err));
+
+// 클릭 시 페이지의 상단으로 스크롤
+const topBtn = document.querySelector(".scroll-to-top");
+
+window.addEventListener("scroll", checkHeight);
+
+// window의 높이 확인
+function checkHeight() {
+  if (window.scrollY < 400) {
+    topBtn.style.display = "none";
+  } else {
+    topBtn.style.display = "flex";
+  }
+}
+
+topBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
