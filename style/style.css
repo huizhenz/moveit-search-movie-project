@@ -52,7 +52,7 @@ body {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
-    url("./img/popcorn.jpeg");
+    url("../assets/popcorn.jpeg");
   background-position: center;
   background-size: cover;
 }
@@ -112,25 +112,22 @@ body {
 
 /* movie-card를 감싸주는 movie */
 #movie {
-  flex-wrap: wrap; /* 반응형 */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
 }
 
 /* 영화 카드 */
 .movie-card {
-  flex-wrap: wrap;
   background-color: rgb(186, 33, 33);
   width: 350px;
-  height: 740px;
+  height: 770px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  margin: 50px;
+  margin: 30px auto 30px auto;
   padding-top: 20px;
 }
 
