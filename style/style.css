@@ -3,7 +3,7 @@
   font-family: "Lato", sans-serif;
 }
 
-body {
+* {
   margin: 0;
 }
 
@@ -42,7 +42,7 @@ body {
 /* 배경 */
 .background {
   color: white;
-  height: 380px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,8 +74,7 @@ body {
   height: 40px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 20px;
-  margin-left: 30px;
-  margin-top: 20px;
+  margin: 30px 0px 0px 30px;
   padding-left: 20px;
 }
 
@@ -111,24 +110,23 @@ body {
 }
 
 /* movie-card를 감싸주는 movie */
-#movie {
+.movie {
   /* flex-wrap: wrap; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  list-style: none;
+  gap: 2rem;
+  padding: 3rem;
 }
 
 /* 영화 카드 */
 .movie-card {
   background-color: rgb(186, 33, 33);
-  width: 350px;
-  height: 770px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  margin: 30px auto 30px auto;
-  padding-top: 20px;
+  margin: 20px;
+  padding: 20px;
 }
 
 /* 영화 카드 호버 */
@@ -142,8 +140,7 @@ body {
 /* 영화 카드 내부 텍스트들 */
 .movie-info {
   text-align: center;
-
-  padding: 20px 10px 10px 10px;
+  padding-top: 20px;
 }
 
 /* 영화 제목 */
@@ -155,19 +152,14 @@ body {
 /* 상단 이동 스크롤 버튼 */
 .scroll-to-top {
   position: fixed;
-
   bottom: 20px;
   right: 8px;
-
   width: 40px;
   height: 40px;
-
   background-color: white;
   border: 3px solid black;
   border-radius: 40px;
-
   cursor: pointer;
-
   display: none;
   justify-content: center;
   align-content: center;

@@ -29,17 +29,17 @@ fetch(
       let img_url = `https://image.tmdb.org/t/p/w300${poster_path}`;
 
       let temp_html = ``;
-      temp_html = `<div class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
+      temp_html = `<li class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
                       <img class="movie-img" src =${img_url} art=${title}"&nbsp이미지" />
-                      <div class="movie-info">
+                      <div  class="movie-info">
                         <span class="movie-title">${title}</span>
                         <span class="grade">${vote_average}</span>
                         <p>${overview}</p>
                       </div>
-                    </div>`;
+                    </li>`;
 
       // id가 "moive"인 요소들 안의 HTML을 temp_html로 변경하기
-      document.getElementById("movie").innerHTML += temp_html;
+      document.querySelector(".movie").innerHTML += temp_html;
     });
 
     // ======================= 검색 기능 ===========================
@@ -63,16 +63,16 @@ fetch(
         let img_url = `https://image.tmdb.org/t/p/w300${poster_path}`;
 
         let temp_html = ``;
-        temp_html = `<div class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
+        temp_html = `<li class="movie-card" onclick=alert("영화&nbsp"+"id:&nbsp"+"${id}")>
                         <img class="movie-img" src =${img_url} art=${title}"&nbsp이미지" />
                         <div class="movie-info">
                           <span class="movie-title">${title}</span>
                           <span class="grade">${vote_average}</span>
                           <p>${overview}</p>
                         </div>
-                      </div>`;
+                      </li>`;
 
-        document.getElementById("movie").innerHTML += temp_html;
+        document.querySelector(".movie").innerHTML += temp_html;
       });
     }
 
